@@ -15,7 +15,7 @@ include_once "my_functions.php";
 
 if (is_valid_user($_POST['email'], $_POST['password'])) {
  $_SESSION['logged_in'] = true;
- header('Location: admin.php');
+ header('Location: ./admin.php');
 } else {
     header('Location: ./login.php');
 }
