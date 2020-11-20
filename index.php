@@ -15,5 +15,17 @@
   <input type="text" id="viesti" name="viesti" placeholder="Kirjoita tähän...">
   <input type="submit" value="Send" name="submit">
 </form>
+<?php 
+$xml = simplexml_load_file('data.xml');
+?>
+<h1>Kommentit</h1>
+<?php
+foreach ($xml->osio as $node):?>
+    <div>
+    <?php if ($node->attributes()['piilota'] == "false"): ?>
+        <h2><?php echo $node->viesti; ?></h2>
+        <?php endif; ?>
+        </div>
+<?php endforeach; ?>
 </body>
 </html>

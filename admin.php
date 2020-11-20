@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION['logged_in'])){
+    header('Location: ./login.php');
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <title>Ylläpitäjänsivu</title>
 </head>
 <body>
-
+<a href="logout.php">Kirjaudu ulos</a>
 <?php 
 $xml = simplexml_load_file('data.xml');
 ?>
