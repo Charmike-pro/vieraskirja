@@ -9,12 +9,14 @@ if (!isset($_POST['submit'])) {
 }
 
 $sender = ($_POST['viesti']);
+$sender2 = ($_POST['viesti2']);
 
 $xml = simplexml_load_file('data.xml');
 
 $new_node = $xml->addChild('osio');
 $new_node->addAttribute('piilota','true');
 $new_node->addChild('viesti', $sender);
+$new_node->addChild('viesti2', $sender2);
 
 // Muotoilu ja tallennus
 $dom = new DOMDocument("1.0");
